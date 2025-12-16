@@ -1,0 +1,194 @@
+/* =========================================
+   GIGWAVE V2 – ELECTRIC BLUE FIRE THEME
+   Rock / Live Event / Neon Stage Aesthetic
+   ========================================= */
+
+/* ---------- CSS VARIABLES (THEME TOKENS) ---------- */
+:root {
+  /* Brand / Energy Colors */
+  --color-electric-blue: #00E5FF;   /* Electric blue fire */
+  --color-neon-pink: #E1067E;       /* Passion / CTA */
+  --color-electric-purple: #6A00FF; /* Depth */
+  --color-live-green: #00FF9C;      /* LIVE only */
+  --color-danger-red: #FF4D4D;      /* Stop / Reject */
+
+  /* Dark Surfaces */
+  --color-bg-app: #0B0B0F;
+  --color-bg-surface: #15151C;
+  --color-bg-elevated: #1C1C26;
+
+  /* Text */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: rgba(255,255,255,0.85);
+  --color-text-muted: rgba(255,255,255,0.55);
+
+  /* Borders */
+  --color-border-subtle: rgba(255,255,255,0.06);
+  --color-border-active: rgba(0,229,255,0.6);
+
+  /* Gradients */
+  --gradient-fire: linear-gradient(135deg, #00E5FF, #6A00FF, #E1067E);
+
+  /* Glows */
+  --glow-blue-soft: 0 0 20px rgba(0,229,255,0.4);
+  --glow-blue-strong: 0 0 35px rgba(0,229,255,0.8);
+  --glow-pink: 0 0 25px rgba(225,6,126,0.5);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}
+
+/* ---------- GLOBAL RESET ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg-app);
+  color: var(--color-text-primary);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+p {
+  color: var(--color-text-secondary);
+}
+
+.small-text {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-primary {
+  background: var(--gradient-fire);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--glow-blue-soft);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.03);
+  box-shadow: var(--glow-blue-strong);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-electric-blue);
+  border: 1px solid var(--color-border-active);
+  border-radius: var(--radius-md);
+  padding: 10px 18px;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background: var(--color-danger-red);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 10px 18px;
+}
+
+.btn-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  border: 1px solid var(--color-border-subtle);
+  transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border: 1px solid var(--color-border-active);
+  transform: scale(1.01);
+}
+
+/* ---------- LIVE BADGE ---------- */
+.live-badge {
+  background: var(--color-electric-blue);
+  color: #000;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: var(--glow-blue-strong);
+  animation: livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+  0% { box-shadow: 0 0 10px rgba(0,229,255,0.4); }
+  50% { box-shadow: 0 0 30px rgba(0,229,255,0.9); }
+  100% { box-shadow: 0 0 10px rgba(0,229,255,0.4); }
+}
+
+/* ---------- NOW PLAYING ---------- */
+.now-playing {
+  text-align: center;
+  color: var(--color-electric-blue);
+  text-shadow: 0 0 20px rgba(0,229,255,0.8);
+}
+
+.now-playing .song {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.now-playing .artist {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+/* ---------- INPUTS ---------- */
+input, select {
+  width: 100%;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  color: white;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border: 1px solid var(--color-electric-blue);
+  box-shadow: var(--glow-blue-soft);
+}
+
+/* ---------- BACKGROUND STAGE GLOW ---------- */
+.stage-glow {
+  background: radial-gradient(
+    circle at top,
+    rgba(0,229,255,0.08),
+    transparent 60%
+  );
+}
+
+/* ---------- UTILITY ---------- */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spacing-lg {
+  margin-top: 24px;
+}

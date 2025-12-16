@@ -1,0 +1,432 @@
+/* ================================
+   GigWave Global Theme
+   Rock / Live Music / Dark Mode
+================================ */
+
+:root {
+  /* Typography */
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Colors */
+  --color-bg-main: #05050a;
+  --color-bg-card: rgba(15, 15, 25, 0.85);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.75);
+
+  --color-electric-blue: #00d4ff;
+  --color-neon-pink: #ff2fd2;
+  --color-fire-orange: #ff7a18;
+
+  /* Rendering */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-primary);
+}
+
+/* Root container */
+#root {
+  min-height: 100vh;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: var(--color-electric-blue);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-neon-pink);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* Buttons – base reset (your custom classes override this) */
+button {
+  font-family: inherit;
+  border-radius: 999px;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  color: inherit;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  font-family: inherit;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(10, 10, 20, 0.9);
+  color: white;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+  border-color: var(--color-electric-blue);
+  box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.25);
+}
+
+/* Utility */
+.hidden {
+  display: none;
+}
+
+/* ================================
+   Central Background Theme
+================================ */
+
+.landing-bg {
+  min-height: 100vh;
+  width: 100%;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5, 5, 10, 0.55),
+      rgba(5, 5, 10, 0.75)
+    ),
+    url("/bg-gig-collage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.landing-overlay {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.landing-center {
+  justify-content: center;
+  text-align: center;
+}
+
+.logo-electric {
+  width: 72px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 18px rgba(0,212,255,0.8));
+}
+
+.landing-cta-center {
+  width: 100%;
+  max-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 72px;
+}
+
+.btn-hero {
+  width: 100%;
+  padding: 20px 32px;      /* slightly more breathing room */
+  font-size: 22px;         /* ⬆️ increased */
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  box-shadow:
+    0 0 30px rgba(0,212,255,0.9),
+    0 0 60px rgba(0,212,255,0.6);
+}
+
+.btn-artist {
+  margin-top: 18px;
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 15px;
+}
+
+/* ================================
+   Logo + Icon
+================================ */
+
+.gw-bar {
+  transform-origin: center;
+  animation: gwPulse 1.6s ease-in-out infinite;
+}
+
+.bar1 { animation-delay: 0s; }
+.bar2 { animation-delay: 0.12s; }
+.bar3 { animation-delay: 0.24s; }
+.bar4 { animation-delay: 0.12s; }
+.bar5 { animation-delay: 0s; }
+
+@keyframes gwPulse {
+  0%, 100% {
+    transform: scaleY(0.85);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scaleY(1.15);
+    opacity: 1;
+  }
+}
+
+.gigwave-logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.gigwave-icon {
+  height: 96px;
+  width: auto;
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.6));
+}
+
+.gigwave-logo-text {
+  font-family: 'Oswald', system-ui, sans-serif;
+  font-size: 96px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  text-shadow:
+    0 0 12px rgba(79, 195, 255, 0.8),
+    0 0 28px rgba(79, 195, 255, 0.6);
+}
+
+/* ================================
+   PUNCHLINE – Ride The Wave Of Live Music
+   (NEW – DOES NOT BREAK OLD CODE)
+================================ */
+
+/* === PUNCHLINE: Per-letter Wave Animation === */
+
+.tagline-wave {
+  font-family: 'Oswald', system-ui, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: none; /* ✅ Sentence Case */
+
+  color: #ffffff;
+  margin-top: 8px;
+  margin-bottom: 18px;
+
+  text-shadow:
+    0 0 10px rgba(0, 212, 255, 0.6),
+    0 0 24px rgba(0, 212, 255, 0.4);
+}
+
+/* Each letter */
+.wave-letter {
+  display: inline-block;
+  animation: letterWave 2.8s ease-in-out infinite;
+}
+
+/* Per-letter wave motion */
+@keyframes letterWave {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-8px); }
+  50%  { transform: translateY(0); }
+  75%  { transform: translateY(8px); }
+  100% { transform: translateY(0); }
+}
+
+/* === SUB PUNCHLINE: Discover Live Music Near You === */
+.tagline-main {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 22px;        /* ⬇️ smaller */
+  font-weight: 400;       /* ⬇️ unbold */
+  letter-spacing: 0.4px;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  margin-top: 16px;
+  margin-bottom: 48px;
+
+  text-shadow:
+    0 0 6px rgba(0, 0, 0, 0.35);
+}
+
+/* ================================
+   Artist Sign In CTA – Enhanced Visibility
+================================ */
+
+.btn-artist {
+  margin-top: 22px;
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  color: #ffffff;
+  background: rgba(0, 212, 255, 0.08);
+
+  border: 2px solid rgba(0, 212, 255, 0.8);
+  border-radius: 999px;
+
+  box-shadow:
+    0 0 14px rgba(0, 212, 255, 0.6),
+    0 0 28px rgba(0, 212, 255, 0.35);
+
+  transition: all 0.25s ease;
+}
+
+/* Hover / focus for desktop */
+.btn-artist:hover,
+.btn-artist:focus-visible {
+  background: rgba(0, 212, 255, 0.18);
+  box-shadow:
+    0 0 20px rgba(0, 212, 255, 0.9),
+    0 0 45px rgba(0, 212, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+/* ================================
+   Artist Sign In CTA – Compact Neon
+================================ */
+
+.btn-artist {
+  margin-top: 22px;
+
+  /* 🔑 Fit content width */
+  width: auto;
+  padding: 14px 26px;
+
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  color: #ffffff;
+
+  /* 🎨 Similar background to main CTA */
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 0.85),
+    rgba(255, 47, 210, 0.85)
+  );
+
+  border: none;
+  border-radius: 999px;
+
+  box-shadow:
+    0 0 14px rgba(0, 212, 255, 0.6),
+    0 0 28px rgba(255, 47, 210, 0.4);
+
+  transition: all 0.25s ease;
+}
+
+/* Hover / focus */
+.btn-artist:hover,
+.btn-artist:focus-visible {
+  box-shadow:
+    0 0 22px rgba(0, 212, 255, 0.9),
+    0 0 48px rgba(255, 47, 210, 0.7);
+  transform: translateY(-1px);
+}
+
+/* ================================
+   📱 Mobile Landing Page Fixes
+================================ */
+
+@media (max-width: 768px) {
+
+  /* Move content slightly higher */
+  .landing-overlay {
+    justify-content: flex-start;
+    padding-top: 80px;
+  }
+
+  /* Logo row scaling */
+  .gigwave-logo-row {
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .gigwave-icon {
+    height: 56px;
+  }
+
+  .gigwave-logo-text {
+    font-size: 56px;
+    line-height: 1;
+  }
+
+  /* Wave tagline */
+  .tagline-wave {
+    font-size: 18px;
+    font-weight: 800;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .wave-letter {
+    display: inline-block;
+  }
+
+  /* CTA container */
+  .landing-cta-center {
+    max-width: 92vw;
+    margin-top: 24px;
+  }
+
+  /* Primary CTA */
+  .btn-hero {
+    font-size: 18px;
+    padding: 16px 18px;
+    box-shadow:
+      0 0 18px rgba(0,212,255,0.8),
+      0 0 32px rgba(0,212,255,0.5);
+  }
+
+  /* Artist CTA */
+  .btn-artist {
+    font-size: 14px;
+    padding: 12px 16px;
+    margin-top: 72px;
+  }
+
+  /* Sub punchline (below button) */
+  .tagline-main {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 14px;
+    opacity: 0.85;
+  }
+}

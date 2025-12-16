@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "localId": "artist-test-uid",
+      "email": "artist@test.com",
+      "emailVerified": true,
+      "passwordHash": "fakehash",
+      "salt": "fakesalt",
+      "displayName": "Test Artist"
+    },
+    {
+      "localId": "audience-test-uid",
+      "email": "audience@test.com",
+      "emailVerified": true,
+      "passwordHash": "fakehash",
+      "salt": "fakesalt",
+      "displayName": "Test Audience"
+    }
+  ]
+}
